@@ -192,7 +192,9 @@ BOOL NotNilAndEqualsValue(id dict, NSString *k, NSString *value){
                                                               userInfo:usrInfo];
         }
         
-        failure(operation, responseObject);
+        if (failure) {
+            failure(operation, responseObject);
+        }
     };
      
     return reqSuccess;
